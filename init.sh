@@ -1,7 +1,10 @@
 #!/bin/bash
+echo ${PASSWORD}
+
 if [ ! -f deleteMeForReinstall ]; then
-  wget -o http://mcmyadmin.com/Downloads/MCMA2_glibc26_2.zip && unzip MCMA2_glibc26_2.zip; rm MCMA2_glibc26_2.zip; 
-  /install.sh
+  wget http://mcmyadmin.com/Downloads/MCMA2_glibc26_2.zip && unzip MCMA2_glibc26_2.zip; rm MCMA2_glibc26_2.zip;
+  
+  /install.sh ${PASSWORD}
   touch deleteMeForReinstall
 fi
 
